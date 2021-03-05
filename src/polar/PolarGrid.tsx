@@ -71,13 +71,10 @@ export class PolarGrid extends PureComponent<Props> {
           const end = polarToCartesian(cx, cy, outerRadius, entry);
 
           return (
-            <line
+            <path
+              d={`M${start.x + 2} ${start.y + 2} L${end.x} ${end.y} L${start.x - 2} ${start.y - 2} Z`}
               {...props}
               key={`line-${i}`} // eslint-disable-line react/no-array-index-key
-              x1={start.x}
-              y1={start.y}
-              x2={end.x}
-              y2={end.y}
             />
           );
         })}
