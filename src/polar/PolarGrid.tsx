@@ -70,9 +70,17 @@ export class PolarGrid extends PureComponent<Props> {
           const start = polarToCartesian(cx, cy, innerRadius, entry);
           const end = polarToCartesian(cx, cy, outerRadius, entry);
 
+          let a = end.x - start.x;
+          let b = end.y - start.y;
+          //Start 2 and 3 reprensent the thickness at the base of the axi
+          const start2 = { x: cx + -b / 80, y: cy + a / 80 };
+          const start3 = { x: cx + b / 80, y: cy - a / 80 };
+
+          console.log(start2);
+
           return (
             <path
-              d={`M${start.x + 2} ${start.y + 2} L${end.x} ${end.y} L${start.x - 2} ${start.y - 2} Z`}
+              d={`M${start2.x} ${start2.y} L${end.x} ${end.y} L${start3.x} ${start3.y} Z`}
               {...props}
               key={`line-${i}`} // eslint-disable-line react/no-array-index-key
             />
