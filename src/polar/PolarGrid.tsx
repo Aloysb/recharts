@@ -73,8 +73,8 @@ export class PolarGrid extends PureComponent<Props> {
           let a = end.x - start.x;
           let b = end.y - start.y;
           //Start 2 and 3 reprensent the thickness at the base of the axi
-          const start2 = { x: cx + -b / 80, y: cy + a / 80 };
-          const start3 = { x: cx + b / 80, y: cy - a / 80 };
+          const start2 = { x: cx + -b / 150, y: cy + a / 150 };
+          const start3 = { x: cx + b / 150, y: cy - a / 150 };
 
           console.log(start2);
 
